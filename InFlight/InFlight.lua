@@ -183,8 +183,8 @@ function InFlight:LoadBulk()  -- called from InFlight_Load
 	end
 
 	-- Update default data
-	if InFlightDB.dbinit ~= 1134 or debug then
-		InFlightDB.dbinit = 1134
+	if InFlightDB.dbinit ~= 1142 or debug then
+		InFlightDB.dbinit = 1142
 		InFlightDB.upload = nil
 		Print(L["DefaultsUpdated"])
 
@@ -467,7 +467,7 @@ do  -- timer bar
 		spark:SetWidth(16)
 		spark:SetBlendMode("ADD")
 
-		bord = CreateFrame("Frame", nil, sb)  -- border/background
+		bord = CreateFrame("Frame", nil, sb, BackdropTemplateMixin and "BackdropTemplate")  -- border/background
 		SetPoints(bord, "TOPLEFT", sb, "TOPLEFT", -5, 5, "BOTTOMRIGHT", sb, "BOTTOMRIGHT", 5, -5)
 		bord:SetFrameStrata("LOW")
 
